@@ -1,5 +1,5 @@
-const recipe = {
-    chocolatechip: {
+const recipe = [
+    {
       name: "Chocolate Chip Cookies",
       image: "",
       desc: "Nestle Tollhouse Chocolate Chip Cookies",
@@ -10,17 +10,53 @@ const recipe = {
         "chocolate",
         "baking"
       ],
-      ingredients: {
-          "all-purpose flour" : "2 1/4 - cups",
-          "baking soda" : "1 - teaspoon",
-          "salt" : "1 - teaspoon",
-          "butter" : "1 - cup",
-          "sugar" : "3/4 - cup",
-          "brown sugar" : "3/4 - cup",
-          "vanilla extract" : "1 - teaspoon",
-          "egg" : "2",
-          "semi-sweet chocolate morsels" : "2 cups"
-      },
+      ingredients: [
+        {
+            ingredient: "all-purpose flour",
+            amount: "2.25",
+            measure: "cups"
+        },
+        {
+            ingredient: "baking soda",
+            amount: "1",
+            measure: "teaspoon"
+        },
+        {
+            ingredient: "salt",
+            amount: "1",
+            measure: "teaspoon"
+        },
+        {
+            ingredient: "butter",
+            amount: "1",
+            measure: "cup"
+        },
+        {
+            ingredient: "sugar",
+            amount: ".75",
+            measure: "cup"
+        },
+        {
+            ingredient: "brown sugar",
+            amount: ".75",
+            measure: "cup"
+        },
+        {
+            ingredient: "vanilla extract",
+            amount: "1",
+            measure: "teaspoon"
+        },
+        {
+            ingredient: "egg",
+            amount: "2",
+            measure: ""
+        },
+        {
+            ingredient: "semi-sweet chocolate morsels",
+            amount: "2",
+            measure: "cups"
+        }
+      ],
       directions: [
           "Combine flour, baking soda and salt in small bowl.",
           "Beat butter, granulated sugar, brown sugar and vanilla extract in large mixer bowl until creamy. ",
@@ -32,4 +68,4 @@ const recipe = {
           "Cool on baking sheets for 2 minutes; remove to wire racks to cool completely."
       ]
     }
-  }
+]
