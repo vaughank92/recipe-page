@@ -5,7 +5,7 @@ import Directions from './Directions';
 class RecipeContainer extends React.Component {
   render() {
     return(
-      <div>
+      <div className="recipeContainer">
         <div>This is the Container</div>
         <Ingredients />
         <Directions />

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Ingredients = () => (
-  <div>Here is an ingredients list</div>
+  <div className="ingredients">Here is an ingredients list</div>
 )
 
 export default Ingredients;

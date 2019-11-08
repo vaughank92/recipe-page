@@ -16,7 +16,7 @@ class HomeContainer extends React.Component {
     render() {
         // console.log(this.props.recipes);
         return(
-            <div>
+            <div className="homeContainer">
                 HomeContainer
                 {this.recipeCards()}
             </div>
