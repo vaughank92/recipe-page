@@ -1,13 +1,24 @@
 import React from 'react';
 import RecipeContainer from './RecipeContainer';
+import '../css/styles.css';
+import HomeContainer from './HomeContainer';
+import sampleRecipes from '../sample-recipe';
 
 class App extends React.Component {
 
+  state = {
+    recipes: sampleRecipes,
+  };
+
+  
+
   render() {
+    console.log(this.state.recipes);
+
     return (
-      <div>
-        <div>Here is a thing</div>
-        <RecipeContainer />
+      <div className="appComponent">
+        <div>Here is App.js</div>
+        <HomeContainer recipes={this.state.recipes}/>
       </div>
     )
   }
