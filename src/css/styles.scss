@@ -5,12 +5,19 @@ $anti-flash-white: #EDF2F4;
 $smoky-black: #0A0908;
 $pearl: #EAE0D5;
 
+$title-fonts: 'Merriweather';
+$not-title-fonts: 'Montserrat';
+
 html {
     background-color: $anti-flash-white;
 }
 
 div {
     border: 1px solid green;
+}
+
+.appComponent {
+    font-family: $title-fonts;
 }
 
 .cards {
@@ -24,4 +31,5 @@ div {
     max-width: 225px;
     height: 150px;
     flex-grow: 1;
+    font-family: $not-title-fonts;
 }

@@ -6,7 +6,6 @@ const RecipeCard = (props) => {
     console.log(name);
     return (
         <div className="recipeCard">
-            <div>RecipeCard</div>
             <span>{name}</span>
         </div>
         

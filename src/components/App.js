@@ -18,7 +18,7 @@ class App extends React.Component {
 
     return (
       <div className="appComponent">
-        <div>Here is App.js</div>
+        <div>Recipes</div>
         <HomeContainer recipes={this.state.recipes}/>
       </div>
     )

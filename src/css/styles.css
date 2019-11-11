@@ -6,6 +6,10 @@ div {
   border: 1px solid green;
 }
 
+.appComponent {
+  font-family: "Merriweather";
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -17,6 +21,7 @@ div {
   max-width: 225px;
   height: 150px;
   flex-grow: 1;
+  font-family: "Montserrat";
 }
 
 /*# sourceMappingURL=styles.css.map */
