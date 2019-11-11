@@ -20,6 +20,8 @@ class HomeContainer extends React.Component {
                 HomeContainer
                 <div className="cards">
                     {this.recipeCards()}
+                    {this.recipeCards()}
+                    {this.recipeCards()}
                 </div>
             </div>
         )
