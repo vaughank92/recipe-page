@@ -1,3 +1,17 @@
-div {
-    border: 1px solid blue;
+html {
+  background-color: #EDF2F4;
 }
+
+div {
+  border: 1px solid green;
+}
+
+.cards {
+  display: flex;
+}
+
+.recipeCard {
+  justify-content: space-evenly;
+}
+
+/*# sourceMappingURL=styles.css.map */

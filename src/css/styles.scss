@@ -1,0 +1,22 @@
+//Variables
+$gunmetal: #2B2D42;
+$gray-blue: #8D99AE;
+$anti-flash-white: #EDF2F4;
+$smoky-black: #0A0908;
+$pearl: #EAE0D5;
+
+html {
+    background-color: $anti-flash-white;
+}
+
+div {
+    border: 1px solid green;
+}
+
+.cards {
+    display: flex;
+}
+
+.recipeCard {
+    justify-content: space-evenly;
+}

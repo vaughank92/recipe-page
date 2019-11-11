@@ -3,6 +3,7 @@ import RecipeContainer from './RecipeContainer';
 import '../css/styles.css';
 import HomeContainer from './HomeContainer';
 import sampleRecipes from '../sample-recipe';
+import '../css/styles.css';
 
 class App extends React.Component {
 

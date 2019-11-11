@@ -18,7 +18,9 @@ class HomeContainer extends React.Component {
         return(
             <div className="homeContainer">
                 HomeContainer
-                {this.recipeCards()}
+                <div className="cards">
+                    {this.recipeCards()}
+                </div>
             </div>
         )
     }
