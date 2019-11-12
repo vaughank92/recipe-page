@@ -1,6 +1,7 @@
 const recipes = [
     {
       name: "Chocolate Chip Cookies",
+      url: "chocolate-chip-cookies",
       image: "",
       desc: "Nestle Tollhouse Chocolate Chip Cookies",
       source: "https://www.allrecipes.com/recipe/174864/original-nestle-toll-house-chocolate-chip-cookies/",
@@ -70,6 +71,7 @@ const recipes = [
     },
     {
         name: "Duplicated Chocolate Chip Cookies",
+        url: "duplicated-chocolate-chip-cookies",
         image: "",
         desc: "Nestle Tollhouse Chocolate Chip Cookies",
         source: "https://www.allrecipes.com/recipe/174864/original-nestle-toll-house-chocolate-chip-cookies/",
