@@ -8,7 +8,7 @@ const Router = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={App}/>
-      <Route exact path="/recipe" component={RecipeContainer}/>
+      <Route exact path="/recipe/:recipeId" component={RecipeContainer}/>
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
