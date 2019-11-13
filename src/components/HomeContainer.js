@@ -8,7 +8,6 @@ class HomeContainer extends React.Component {
     goToRecipe = (event) => {
         console.log(event.currentTarget.id);
         const recipeUrl = event.currentTarget.id;
-        debugger;
         this.props.history.push(`/recipe/${recipeUrl}`);
     }
 
