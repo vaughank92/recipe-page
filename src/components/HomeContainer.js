@@ -8,7 +8,10 @@ class HomeContainer extends React.Component {
     goToRecipe = (event) => {
         console.log(event.currentTarget.id);
         const recipeUrl = event.currentTarget.id;
-        this.props.history.push(`/recipe/${recipeUrl}`);
+        this.props.history.push({
+            pathname: `/recipe/${recipeUrl}`,
+            state: {recipeId: recipeUrl}
+        });
     }
 
     recipeCards = () => {
