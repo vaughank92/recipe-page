@@ -8,13 +8,21 @@ class RecipeContainer extends React.Component {
 
     // console.log(this.props.match.params.recipeId);
     const recipeId = this.props.match.params.recipeId;
-    console.log(sampleRecipes[0]);
+    // console.log(sampleRecipes);
+
+    const recipe = sampleRecipes.find(function(recipe) {
+        console.log(recipeId);
+        return recipe.url == recipeId;
+      }
+    )
+
+    console.log(recipe);
 
     return(
       <div className="recipeContainer">
         <div>This is the Container</div>
-        <Ingredients />
-        <Directions />
+        <Ingredients ingredientsList={recipe.ingredients}/>
+        <Directions directionsList={recipe.directions}/>
       </div>
     )
   }
