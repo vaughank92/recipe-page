@@ -10,10 +10,17 @@ $not-title-fonts: 'Montserrat';
 
 html {
     background-color: $anti-flash-white;
+    color: $smoky-black;
+    height: 100%;
 }
 
-div {
-    // border: 1px solid green;
+body, #main, #main > div {
+    height: 100%;
+}
+
+.header {
+    height: 50px;
+    font-size: 20px;
 }
 
 .appComponent {
@@ -22,14 +29,24 @@ div {
 
 .sideBar {
     display: inline-block;
-    width: 25%;
-    border: 1px solid blue;
+    width: 20%;
+    background-color: $gray-blue;
+    margin-top: 10px;
+    height: 100%;
+}
+
+.sideBar, .recipeCard {
+    border-radius: 10px;
 }
 
 
-.cardContainer {
-    width: 74%;
+.homeContainer, .recipeContainer {
+    max-width: 80%;
     float: right;
+}
+
+.ingredients, .directions {
+    margin: 10px;
 }
 
 .cards {
@@ -40,10 +57,10 @@ div {
 .recipeCard {
     justify-content: space-evenly;
     margin: 10px;
-    // max-width: 225px;
     flex-basis: 25%;
     height: 150px;
     flex-grow: 1;
     font-family: $not-title-fonts;
-    border: 1px solid green;
+    background-color: $pearl;
 }
+

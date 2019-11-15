@@ -1,5 +1,16 @@
 html {
   background-color: #EDF2F4;
+  color: #0A0908;
+  height: 100%;
+}
+
+body, #main, #main > div {
+  height: 100%;
+}
+
+.header {
+  height: 50px;
+  font-size: 20px;
 }
 
 .appComponent {
@@ -8,13 +19,23 @@ html {
 
 .sideBar {
   display: inline-block;
-  width: 25%;
-  border: 1px solid blue;
+  width: 20%;
+  background-color: #8D99AE;
+  margin-top: 10px;
+  height: 100%;
 }
 
-.cardContainer {
-  width: 74%;
+.sideBar, .recipeCard {
+  border-radius: 10px;
+}
+
+.homeContainer, .recipeContainer {
+  max-width: 80%;
   float: right;
+}
+
+.ingredients, .directions {
+  margin: 10px;
 }
 
 .cards {
@@ -29,7 +50,7 @@ html {
   height: 150px;
   flex-grow: 1;
   font-family: "Montserrat";
-  border: 1px solid green;
+  background-color: #EAE0D5;
 }
 
 /*# sourceMappingURL=styles.css.map */
