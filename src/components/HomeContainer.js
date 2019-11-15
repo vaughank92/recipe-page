@@ -30,11 +30,12 @@ class HomeContainer extends React.Component {
     render() {
         return(
             <div className="homeContainer">
-                HomeContainer
-                <div className="cards">
-                    {this.recipeCards()}
-                    {this.recipeCards()}
-                    {this.recipeCards()}
+                <div className="cardContainer">
+                    <div className="cards">
+                        {this.recipeCards()}
+                        {this.recipeCards()}
+                        {this.recipeCards()}
+                    </div>
                 </div>
             </div>
         )
