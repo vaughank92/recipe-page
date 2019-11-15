@@ -4,7 +4,6 @@ import Ingredient from './Ingredient';
 class Ingredients extends React.Component {
 
   extractIngredient = (ingredientsList) => {
-    console.log(ingredientsList);
 
     return Object.keys(ingredientsList).map(function(key){
       const ingObj = ingredientsList[key];
@@ -18,10 +17,6 @@ class Ingredients extends React.Component {
 
 
   render() {
-
-    // console.log(this.props);
-
-    // this.extractIngredient(this.props.ingredientsList);
   
     return(
       <div className="ingredients">

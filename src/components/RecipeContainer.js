@@ -6,17 +6,12 @@ import sampleRecipes from '../sample-recipe';
 class RecipeContainer extends React.Component {
   render() {
 
-    // console.log(this.props.match.params.recipeId);
     const recipeId = this.props.match.params.recipeId;
-    // console.log(sampleRecipes);
 
     const recipe = sampleRecipes.find(function(recipe) {
-        console.log(recipeId);
         return recipe.url == recipeId;
       }
     )
-
-    console.log(recipe);
 
     return(
       <div className="recipeContainer">

@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 class HomeContainer extends React.Component {
 
     goToRecipe = (event) => {
-        console.log(event.currentTarget.id);
         const recipeUrl = event.currentTarget.id;
         this.props.history.push({
             pathname: `/recipe/${recipeUrl}`,
@@ -15,8 +14,6 @@ class HomeContainer extends React.Component {
     }
 
     recipeCards = () => {
-        // console.log(this.props.recipes);
-        // console.log(this.goToRecipe());
         const recipes = this.props.recipes;
         return Object.keys(recipes).map(key =>
             <RecipeCard details={recipes[key]} recipeClick={this.goToRecipe} key={key} name={recipes[key].name}/>
@@ -24,7 +21,6 @@ class HomeContainer extends React.Component {
     }
     
     render() {
-        // console.log(this.props.recipes);
         return(
             <div className="homeContainer">
                 HomeContainer
