@@ -8,10 +8,7 @@ class RecipeContainer extends React.Component {
 
     const recipeId = this.props.match.params.recipeId;
 
-    const recipe = sampleRecipes.find((recipe) => {
-        return recipe.url == recipeId;
-      }
-    )
+    const recipe = sampleRecipes.find((recipe) => recipe.url == recipeId)
 
     return(
       <div className="recipeContainer">
