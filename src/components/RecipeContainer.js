@@ -12,7 +12,6 @@ class RecipeContainer extends React.Component {
 
     return(
       <div className="recipeContainer">
-        <div>This is the Container</div>
         <Ingredients ingredientsList={recipe.ingredients}/>
         <Directions directionsList={recipe.directions}/>
       </div>
