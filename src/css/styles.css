@@ -2,12 +2,19 @@ html {
   background-color: #EDF2F4;
 }
 
-div {
-  border: 1px solid green;
-}
-
 .appComponent {
   font-family: "Merriweather";
+}
+
+.sideBar {
+  display: inline-block;
+  width: 25%;
+  border: 1px solid blue;
+}
+
+.cardContainer {
+  width: 74%;
+  float: right;
 }
 
 .cards {
@@ -18,10 +25,11 @@ div {
 .recipeCard {
   justify-content: space-evenly;
   margin: 10px;
-  max-width: 225px;
+  flex-basis: 25%;
   height: 150px;
   flex-grow: 1;
   font-family: "Montserrat";
+  border: 1px solid green;
 }
 
 /*# sourceMappingURL=styles.css.map */

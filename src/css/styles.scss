@@ -13,11 +13,23 @@ html {
 }
 
 div {
-    border: 1px solid green;
+    // border: 1px solid green;
 }
 
 .appComponent {
     font-family: $title-fonts;
+}
+
+.sideBar {
+    display: inline-block;
+    width: 25%;
+    border: 1px solid blue;
+}
+
+
+.cardContainer {
+    width: 74%;
+    float: right;
 }
 
 .cards {
@@ -28,8 +40,10 @@ div {
 .recipeCard {
     justify-content: space-evenly;
     margin: 10px;
-    max-width: 225px;
+    // max-width: 225px;
+    flex-basis: 25%;
     height: 150px;
     flex-grow: 1;
     font-family: $not-title-fonts;
+    border: 1px solid green;
 }
