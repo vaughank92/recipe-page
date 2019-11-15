@@ -8,7 +8,7 @@ class RecipeContainer extends React.Component {
 
     const recipeId = this.props.match.params.recipeId;
 
-    const recipe = sampleRecipes.find(function(recipe) {
+    const recipe = sampleRecipes.find((recipe) => {
         return recipe.url == recipeId;
       }
     )

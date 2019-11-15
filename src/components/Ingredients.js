@@ -5,7 +5,7 @@ class Ingredients extends React.Component {
 
   extractIngredient = (ingredientsList) => {
 
-    return Object.keys(ingredientsList).map(function(key){
+    return Object.keys(ingredientsList).map((key) => {
       const ingObj = ingredientsList[key];
       return <Ingredient
         key={ingObj['ingredient']}

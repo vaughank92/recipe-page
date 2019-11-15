@@ -15,9 +15,9 @@ class HomeContainer extends React.Component {
 
     recipeCards = () => {
         const recipes = this.props.recipes;
-        return Object.keys(recipes).map(key =>
-            <RecipeCard details={recipes[key]} recipeClick={this.goToRecipe} key={key} name={recipes[key].name}/>
-        )
+        return Object.keys(recipes).map((key) => {
+            return <RecipeCard details={recipes[key]} recipeClick={this.goToRecipe} key={key} name={recipes[key].name} />
+        })
     }
     
     render() {
