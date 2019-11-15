@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Directions = () => (
-  <div className="directions">Directions</div>
+const Directions = (props) => (
+  <div className="directions">{props.directionsList}</div>
 )
 
 export default Directions;
