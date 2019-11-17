@@ -1,5 +1,4 @@
 import React from 'react';
-import samplerecipe from '../sample-recipe';
 
 
 const RecipeCard = (props) => {

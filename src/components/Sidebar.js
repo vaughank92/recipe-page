@@ -3,7 +3,7 @@ import '../css/styles.css';
 
 class Sidebar extends React.Component {
     render() {
-        return(
+        return (
             <div className="sideBar">
                 <div>one</div>
                 <div>two</div>
