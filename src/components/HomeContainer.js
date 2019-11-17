@@ -28,7 +28,7 @@ class HomeContainer extends React.Component {
     }
     
     render() {
-        return(
+        return (
             <div className="homeContainer">
                 <div className="cards">
                     {this.recipeCards()}
