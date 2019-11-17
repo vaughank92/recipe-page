@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/styles.css';
-import RecipeCard from './RecipeCard';
 import { withRouter } from 'react-router-dom';
+import RecipeCard from './RecipeCard';
+import '../css/styles.css';
 
 class HomeContainer extends React.Component {
 
@@ -28,9 +28,8 @@ class HomeContainer extends React.Component {
     }
     
     render() {
-        return(
+        return (
             <div className="homeContainer">
-                HomeContainer
                 <div className="cards">
                     {this.recipeCards()}
                     {this.recipeCards()}

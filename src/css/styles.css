@@ -1,13 +1,41 @@
 html {
   background-color: #EDF2F4;
+  color: #0A0908;
+  height: 100%;
 }
 
-div {
-  border: 1px solid green;
+body, #main, #main > div, .pageContent {
+  height: 100%;
+}
+
+.header {
+  height: 50px;
+  font-size: 20px;
 }
 
 .appComponent {
   font-family: "Merriweather";
+}
+
+.sideBar {
+  display: inline-block;
+  width: 20%;
+  background-color: #8D99AE;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.sideBar, .recipeCard {
+  border-radius: 10px;
+}
+
+.homeContainer, .recipeContainer {
+  max-width: 80%;
+  float: right;
+}
+
+.ingredients, .directions {
+  margin: 10px;
 }
 
 .cards {
@@ -18,10 +46,12 @@ div {
 .recipeCard {
   justify-content: space-evenly;
   margin: 10px;
-  max-width: 225px;
+  flex-basis: 25%;
+  min-width: 250px;
   height: 150px;
   flex-grow: 1;
   font-family: "Montserrat";
+  background-color: #EAE0D5;
 }
 
 /*# sourceMappingURL=styles.css.map */

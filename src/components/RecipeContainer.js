@@ -5,14 +5,11 @@ import sampleRecipes from '../sample-recipe';
 
 class RecipeContainer extends React.Component {
   render() {
-
     const recipeId = this.props.match.params.recipeId;
+    const recipe = sampleRecipes.find((recipe) => recipe.url == recipeId);
 
-    const recipe = sampleRecipes.find((recipe) => recipe.url == recipeId)
-
-    return(
+    return (
       <div className="recipeContainer">
-        <div>This is the Container</div>
         <Ingredients ingredientsList={recipe.ingredients}/>
         <Directions directionsList={recipe.directions}/>
       </div>

@@ -17,8 +17,7 @@ class Ingredients extends React.Component {
 
 
   render() {
-  
-    return(
+    return (
       <div className="ingredients">
         <span>Here is an ingredient list</span>
         {this.extractIngredient(this.props.ingredientsList)}
