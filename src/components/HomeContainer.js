@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import RecipeCard from './RecipeCard';
+import Sidebar from './Sidebar';
 import '../css/styles.css';
 
 class HomeContainer extends React.Component {
@@ -29,13 +30,17 @@ class HomeContainer extends React.Component {
     
     render() {
         return (
-            <div className="homeContainer">
-                <div className="cards">
-                    {this.recipeCards()}
-                    {this.recipeCards()}
-                    {this.recipeCards()}
+            <div className="pageContent">
+                <Sidebar />
+                <div className="homeContainer">
+                    <div className="cards">
+                        {this.recipeCards()}
+                        {this.recipeCards()}
+                        {this.recipeCards()}
+                    </div>
                 </div>
             </div>
+            
         )
     }
 }
