@@ -19,26 +19,39 @@ body, #main, #main > div, .pageContent {
     font-family: $title-fonts;
 }
 
-.sideBar {
+.sideBar, .ingredients {
     display: inline-block;
-    width: 20%;
+    width: 18%;
     background-color: $gray-blue;
-    margin-top: 10px;
+    padding: 10px;
     height: 100%;
+    font-family: $not-title-fonts;
+    
+    span {
+        font-size: 14px;
+    }
 }
 
-.sideBar, .recipeCard {
+.ingredients {
+    ul {
+        padding: 0;
+    }
+}
+
+.sideBar, .recipeCard, .ingredients, .recipeContainer {
     border-radius: 10px;
 }
 
 
 .homeContainer, .recipeContainer {
-    max-width: 80%;
+    margin-left: 15px;
+    max-width: 75%;
     float: right;
 }
 
-.ingredients, .directions {
-    margin: 10px;
+.recipeContainer {
+    background-color: $pearl;
+    padding: 10px;
 }
 
 .cards {
@@ -55,5 +68,9 @@ body, #main, #main > div, .pageContent {
     flex-grow: 1;
     font-family: $not-title-fonts;
     background-color: $pearl;
+}
+
+.directions {
+    font-family: $not-title-fonts;
 }
 

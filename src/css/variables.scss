@@ -7,3 +7,10 @@ $pearl: #EAE0D5;
 
 $title-fonts: 'Merriweather';
 $not-title-fonts: 'Montserrat';
+
+//Font things
+h2, h4 {
+    font-family: $title-fonts;
+    margin: 0;
+    margin-bottom: 10px;
+}
