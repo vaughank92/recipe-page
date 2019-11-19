@@ -4,6 +4,18 @@ h2, h4 {
   margin-bottom: 10px;
 }
 
+h2, h4 {
+  font-family: "Merriweather";
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h2, h4 {
+  font-family: "Merriweather";
+  margin: 0;
+  margin-bottom: 10px;
+}
+
 html {
   background-color: #EDF2F4;
   color: #0A0908;
