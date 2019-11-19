@@ -61,6 +61,7 @@ body, #main, #main > div, .pageContent {
 .cards {
     display: flex;
     flex-wrap: wrap;
+    margin: -10px;
 }
 
 .recipeCard {
