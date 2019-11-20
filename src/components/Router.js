@@ -11,7 +11,6 @@ const Router = () => (
   <BrowserRouter>
     <div>
       <App />
-      <Sidebar />
       <Switch>
         <Route exact path="/" render={(props) => <HomeContainer recipes={sampleRecipes} />}/>
         <Route exact path="/recipe/:recipeId" component={RecipeContainer}/>

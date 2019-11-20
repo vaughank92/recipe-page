@@ -1,3 +1,21 @@
+h2, h4 {
+  font-family: "Merriweather";
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h2, h4 {
+  font-family: "Merriweather";
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h2, h4 {
+  font-family: "Merriweather";
+  margin: 0;
+  margin-bottom: 10px;
+}
+
 html {
   background-color: #EDF2F4;
   color: #0A0908;
@@ -6,6 +24,10 @@ html {
 
 body, #main, #main > div, .pageContent {
   height: 100%;
+}
+
+.pageContent {
+  display: flex;
 }
 
 .header {
@@ -17,30 +39,41 @@ body, #main, #main > div, .pageContent {
   font-family: "Merriweather";
 }
 
-.sideBar {
+.sideBar, .ingredients {
   display: inline-block;
-  width: 20%;
+  flex-basis: 20%;
   background-color: #8D99AE;
-  margin-top: 10px;
+  padding: 10px;
   height: 100%;
+  font-family: "Montserrat";
+}
+.sideBar span, .ingredients span {
+  font-size: 14px;
 }
 
-.sideBar, .recipeCard {
+.ingredients ul {
+  padding: 0;
+}
+
+.sideBar, .recipeCard, .ingredients, .recipeContainer {
   border-radius: 10px;
 }
 
 .homeContainer, .recipeContainer {
-  max-width: 80%;
+  margin-left: 15px;
+  flex-basis: 80%;
   float: right;
 }
 
-.ingredients, .directions {
-  margin: 10px;
+.recipeContainer {
+  background-color: #EAE0D5;
+  padding: 10px;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
+  margin: -10px;
 }
 
 .recipeCard {
@@ -52,6 +85,10 @@ body, #main, #main > div, .pageContent {
   flex-grow: 1;
   font-family: "Montserrat";
   background-color: #EAE0D5;
+}
+
+.directions {
+  font-family: "Montserrat";
 }
 
 /*# sourceMappingURL=styles.css.map */

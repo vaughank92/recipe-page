@@ -9,9 +9,12 @@ class RecipeContainer extends React.Component {
     const recipe = sampleRecipes.find((recipe) => recipe.url == recipeId);
 
     return (
-      <div className="recipeContainer">
+      <div className="pageContent">
         <Ingredients ingredientsList={recipe.ingredients}/>
-        <Directions directionsList={recipe.directions}/>
+        <div className="recipeContainer">
+          <h2>{recipe.name}</h2>
+          <Directions directionsList={recipe.directions}/>
+        </div>
       </div>
     )
   }
