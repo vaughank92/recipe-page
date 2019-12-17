@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
@@ -12,6 +13,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/test')
 .then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : mongodb://127.0.0.1:27017/test`)})
 .catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : mongodb://127.0.0.1:27017/test`)});
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

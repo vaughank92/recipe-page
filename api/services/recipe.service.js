@@ -16,8 +16,14 @@ exports.getAllRecipes = async(query, page, limit) => {
     }
 }
 
+parseIngredients = (ingredients) => {
+    console.log(typeof(ingredients));
+}
+
 exports.createRecipe = async(recipe) => {
-    let newRecipe = newRecipe({
+    test = parseIngredients(recipe.ingredients);
+
+    let newRecipe = new Recipe({
         name: recipe.name,
         url: recipe.url,
         image: recipe.image,
@@ -32,7 +38,7 @@ exports.createRecipe = async(recipe) => {
         let savedRecipe = await newRecipe.save();
         return savedRecipe;
     } catch(e) {
-        throw Error("Error Creating Recipe");
+        throw Error("Error Creating Recipe " + e);
     }
 }
 

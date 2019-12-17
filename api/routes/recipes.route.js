@@ -6,6 +6,6 @@ const RecipesController = require('../controllers/recipes.controller');
 
 router.get('/', RecipesController.getAllRecipes);
 
-router.post('/tested', RecipesController.createRecipe);
+router.post('/', RecipesController.createRecipe);
 
 module.exports = router;

@@ -27,6 +27,7 @@ exports.getAllRecipes = async(req, res, next) => {
 }
 
 exports.createRecipe = async(req, res, next) => {
+    console.log(req.body);
 
     const recipe = {
         name: req.body.name,
@@ -39,6 +40,8 @@ exports.createRecipe = async(req, res, next) => {
         directions: req.body.directions
     }
 
+    console.log(recipe.ingredients);
+
     try{
         let createdRecipe = await RecipeService.createRecipe(recipe);
         return res.status(201).json({
@@ -50,7 +53,7 @@ exports.createRecipe = async(req, res, next) => {
     catch(e) {
         return res.status(400).json({
             status: 400,
-            message: "Recipe Creation Unsuccessful"
+            message: "Recipe Creation Unsuccessful " + e
         });
     }
 }
