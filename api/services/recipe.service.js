@@ -1,7 +1,5 @@
 let Recipe = require('../models/recipe.model');
 
-_this = this;
-
 exports.getAllRecipes = async(query, page, limit) => {
     const options = {
         page,
