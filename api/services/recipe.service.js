@@ -14,12 +14,7 @@ exports.getAllRecipes = async(query, page, limit) => {
     }
 }
 
-parseIngredients = (ingredients) => {
-    console.log(typeof(ingredients));
-}
-
 exports.createRecipe = async(recipe) => {
-    test = parseIngredients(recipe.ingredients);
 
     let newRecipe = new Recipe({
         name: recipe.name,
