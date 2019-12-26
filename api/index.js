@@ -1,9 +1,7 @@
-const mongoose = require('mongoose');
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const path = require('path');
 const app = express();
-
 
 const api = require('./routes/api.route');
 
@@ -23,20 +21,12 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', api);
+app.use('/api', api);
 
 app.set('port', process.env.PORT || 7777);
 const server = app.listen(app.get('port'), () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
-
-// app.use((req, res, next) => {
-//     let err = new Error('Problem');
-//     err.status = 404;
-//     next(err);
-// });
 
 console.log('here');
 
