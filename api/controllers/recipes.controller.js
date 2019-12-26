@@ -27,8 +27,6 @@ exports.getAllRecipes = async(req, res, next) => {
 }
 
 exports.createRecipe = async(req, res, next) => {
-    console.log(req.body);
-
     const recipe = {
         name: req.body.name,
         url: req.body.url,
@@ -39,8 +37,6 @@ exports.createRecipe = async(req, res, next) => {
         ingredients: req.body.ingredients,
         directions: req.body.directions
     }
-
-    console.log(recipe.ingredients);
 
     try{
         let createdRecipe = await RecipeService.createRecipe(recipe);
