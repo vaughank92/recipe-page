@@ -5,9 +5,20 @@ import '../css/styles.css';
 
 class App extends React.Component {
 
+  apiCheck() {
+    fetch("http://localhost:7777/api/recipes")
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(e => console.error(e))
+  }
+
   state = {
     recipes: sampleRecipes,
   };
+
+  componentDidMount() {
+    this.apiCheck();
+  }
 
   render() {
 
@@ -18,5 +29,6 @@ class App extends React.Component {
     )
   }
 }
+
 
 export default App;
