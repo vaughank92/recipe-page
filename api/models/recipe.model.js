@@ -3,20 +3,20 @@ mongoose.Promise = global.Promise;
 const mongoosePaginate = require('mongoose-paginate');
 
 let RecipeSchema = new mongoose.Schema({
-    name: String,
-    url: String,
+    name: { type: String, required: true },
+    url: { type: String, required: true },
     image: String,
     desc: String,
     source: String,
-    keywords: Array,
+    keywords: { type: Array, required: true }, 
     ingredients: [
         {
-            ingredient: String,
-            amount: String,
-            measure: String
+            ingredient: { type: String, required: true },
+            amount: { type: String, required: true },
+            measure: { type: String, required: true }
         }
     ],
-    directions: Array
+    directions: { type: Array, required: true }
 });
 
 RecipeSchema.plugin(mongoosePaginate);
