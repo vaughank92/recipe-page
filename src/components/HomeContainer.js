@@ -17,19 +17,17 @@ const HomeContainer = (props) => {
     };
 
     const recipeCards = (
-        
         Object.keys(recipes).map((key) => {
-            console.log(recipes);
             return (
-            <RecipeCard 
-                details={recipes[key]} 
-                recipeClick={goToRecipe} 
-                key={key} 
-                name={recipes[key].name} 
-            />
+                <RecipeCard
+                    details={recipes[key]}
+                    recipeClick={goToRecipe}
+                    key={key}
+                    name={recipes[key].name}
+                />
             )
         })
-        );
+    );
     
     return (
         <div className="pageContent">
@@ -39,8 +37,7 @@ const HomeContainer = (props) => {
                     {recipeCards}
                 </div>
             </div>
-        </div>
-        
+        </div>  
     )
 }
 
