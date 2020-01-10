@@ -11,10 +11,8 @@ import sampleRecipes from '../sample-recipe';
 
 const Router = () => {
   const [recipes, setRecipes] = useState({});
-  console.log(recipes);
 
   useEffect(() => {
-      console.log('hit');
       fetch("http://localhost:7777/api/recipes")
           .then(res => res.json())
           .then(data => setRecipes(data.data.docs))
