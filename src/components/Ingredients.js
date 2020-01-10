@@ -4,15 +4,15 @@ import Ingredient from './Ingredient';
 class Ingredients extends React.Component {
 
   extractIngredient = (ingredientsList) => {
-
-    return Object.keys(ingredientsList).map((key) => {
-      const ingObj = ingredientsList[key];
-      return <Ingredient
-        key={ingObj['ingredient']}
-        amount={ingObj['amount']}
-        measure={ingObj['measure']}
-        ingredient={ingObj['ingredient']} />
-      })
+    return ingredientsList ?
+      Object.keys(ingredientsList).map((key) => {
+        const ingObj = ingredientsList[key];
+        return <Ingredient
+          key={ingObj['ingredient']}
+          amount={ingObj['amount']}
+          measure={ingObj['measure']}
+          ingredient={ingObj['ingredient']} />
+        }) : null;
     };
 
 
