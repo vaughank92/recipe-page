@@ -14,6 +14,18 @@ exports.getAllRecipes = async(query, page, limit) => {
     }
 }
 
+exports.getSingleRecipeFromUrl = async(recipeUrl) => {
+
+    try {
+        const recipe = await Recipe.findOne({url: recipeUrl}, (err, doc) => {
+            return err ? err : doc;
+        });
+        return recipe;
+    } catch(e) {
+        throw Error("Recipe could not be found");
+    }
+}
+
 exports.createRecipe = async(recipe) => {
 
     let newRecipe = new Recipe({
