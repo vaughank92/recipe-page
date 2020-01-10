@@ -4,45 +4,44 @@ import RecipeCard from './RecipeCard';
 import Sidebar from './Sidebar';
 import '../css/styles.css';
 
-class HomeContainer extends React.Component {
+const HomeContainer = (props) => {
 
-    goToRecipe = (event) => {
+    const recipes = props.recipes;
+
+    const goToRecipe = (event) => {
         const recipeUrl = event.currentTarget.id;
-        this.props.history.push({
+        props.history.push({
             pathname: `/recipe/${recipeUrl}`,
             state: {recipeId: recipeUrl}
         });
-    }
+    };
 
-    recipeCards = () => {
-        const recipes = this.props.recipes;
-        return Object.keys(recipes).map((key) => {
+    const recipeCards = (
+        
+        Object.keys(recipes).map((key) => {
+            console.log(recipes);
             return (
             <RecipeCard 
                 details={recipes[key]} 
-                recipeClick={this.goToRecipe} 
+                recipeClick={goToRecipe} 
                 key={key} 
                 name={recipes[key].name} 
             />
             )
         })
-    }
+        );
     
-    render() {
-        return (
-            <div className="pageContent">
-                <Sidebar />
-                <div className="homeContainer">
-                    <div className="cards">
-                        {this.recipeCards()}
-                        {this.recipeCards()}
-                        {this.recipeCards()}
-                    </div>
+    return (
+        <div className="pageContent">
+            <Sidebar />
+            <div className="homeContainer">
+                <div className="cards">
+                    {recipeCards}
                 </div>
             </div>
-            
-        )
-    }
+        </div>
+        
+    )
 }
 
 export default withRouter(HomeContainer);
