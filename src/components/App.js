@@ -5,13 +5,6 @@ import '../css/styles.css';
 
 function App() {
 
-  useEffect(() => {
-    fetch("http://localhost:7777/api/recipes")
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(e => console.error(e))
-  });
-
   return (
     <div className="appComponent">
       <Header />
