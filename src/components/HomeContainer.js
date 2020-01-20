@@ -4,13 +4,11 @@ import RecipeCard from './RecipeCard';
 import Sidebar from './Sidebar';
 import '../css/styles.css';
 
-const HomeContainer = (props) => {
-
-    const recipes = props.recipes;
+const HomeContainer = ({recipes, history}) => {
 
     const goToRecipe = (event) => {
         const recipeUrl = event.currentTarget.id;
-        props.history.push({
+        history.push({
             pathname: `/recipe/${recipeUrl}`,
             state: {recipeId: recipeUrl}
         });

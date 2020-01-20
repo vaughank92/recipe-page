@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Ingredient = (props) => {
-    const {amount, measure, ingredient} = props;
+const Ingredient = ({amount, measure, ingredient}) => {
     return (
         <ul>
             <span className="amount">{amount} </span>

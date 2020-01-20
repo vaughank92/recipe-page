@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Directions = (props) => (
+const Directions = ({directionsList}) => (
   <div className="directions">
     <h4>Directions</h4>
-    {props.directionsList ? props.directionsList.map((item, index) => {
+    {directionsList ? directionsList.map((item, index) => {
       return <ol key={index}>{item}</ol>
     }) : null }
   </div>
