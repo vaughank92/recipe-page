@@ -24,13 +24,13 @@ exports.getAllRecipes = async(req, res, next) => {
 
 exports.getSingleRecipeFromUrl = async(req, res) => {
 
-    if(!req.params.id) {
+    if(!req.params.url) {
         return res.status(400).json({
-          message: "Missing recipe ID"
+          message: "Missing recipe URL"
         })
     }
 
-    const recipeUrl = req.params.id;
+    const recipeUrl = req.params.url;
 
     try {
         const recipe = await RecipeService.getSingleRecipeFromUrl(recipeUrl);
