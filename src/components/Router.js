@@ -13,7 +13,7 @@ const Router = () => {
   const [recipes, setRecipes] = useState({});
 
   useEffect(() => {
-      fetch("http://localhost:7777/api/recipes")
+      fetch(`http://localhost:7777/api/recipes`)
           .then(res => res.json())
           .then(data => setRecipes(data.data.docs))
           .catch(e => console.error(e))

@@ -9,7 +9,7 @@ const RecipeContainer = (props) =>{
     const [recipe, setSingleRecipe] = useState({});
 
     useEffect(() => {
-      fetch("http://localhost:7777/api/recipes/" + recipeId)
+      fetch(`http://localhost:7777/api/recipes/${recipeId}`)
           .then(res => res.json())
           .then(data => setSingleRecipe(data.data))
           .catch(e => console.error(e))
