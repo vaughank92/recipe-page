@@ -3,7 +3,7 @@ import sampleRecipes from '../sample-recipe';
 import Header from './Header';
 import '../css/styles.css';
 
-function App() {
+const App = () => {
 
   return (
     <div className="appComponent">
