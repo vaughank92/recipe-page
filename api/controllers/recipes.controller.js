@@ -12,13 +12,11 @@ exports.getAllRecipes = async(req, res, next) => {
         let recipes = await RecipeService.getAllRecipes({}, page, limit);
         
         return res.status(200).json({
-            status: 200,
             data: recipes,
             message: "All Recipes Received"
         });
     } catch(e) {
         return res.status(400).json({
-            status: 400,
             message: e.message
         });
     }
@@ -27,7 +25,9 @@ exports.getAllRecipes = async(req, res, next) => {
 exports.getSingleRecipeFromUrl = async(req, res) => {
 
     if(!req.params.id) {
-        return res.status(400).json({status: 400, message: "Missing recipe ID"})
+        return res.status(400).json({
+          message: "Missing recipe ID"
+        })
     }
 
     const recipeUrl = req.params.id;
@@ -35,13 +35,11 @@ exports.getSingleRecipeFromUrl = async(req, res) => {
     try {
         const recipe = await RecipeService.getSingleRecipeFromUrl(recipeUrl);
         return res.status(200).json({
-            status: 200,
             data: recipe,
             message: "Recipe Found"
         });
     } catch(e) {
         return res.status(400).json({
-            status: 400,
             message: e.message
         })
     }
@@ -63,14 +61,13 @@ exports.createRecipe = async(req, res, next) => {
     try{
         let createdRecipe = await RecipeService.createRecipe(recipe);
         return res.status(201).json({
-            status: 201,
             data: createdRecipe,
             message: "Successfully Created Recipe"
         });
     }
     catch(e) {
         return res.status(400).json({
-            status: 400,
+
             message: "Recipe Creation Unsuccessful " + e
         });
     }
