@@ -1,5 +1,8 @@
 let Recipe = require('../models/recipe.model');
 
+/**
+ * @return {object} recipes - object containing all recipes
+ */
 exports.getAllRecipes = async(query, page, limit) => {
     const options = {
         page,
@@ -14,6 +17,10 @@ exports.getAllRecipes = async(query, page, limit) => {
     }
 }
 
+/**
+ * @param {string} recipeUrl - url contained in the recipe object
+ * @return {object} recipe - a singular recipe object
+ */
 exports.getSingleRecipeFromUrl = async(recipeUrl) => {
 
     try {
@@ -26,6 +33,10 @@ exports.getSingleRecipeFromUrl = async(recipeUrl) => {
     }
 }
 
+/**
+ * @param {object} recipe - recipe object
+ * @return {object} savedRecipe - newly added recipe
+ */
 exports.createRecipe = async(recipe) => {
 
     let newRecipe = new Recipe({

@@ -1,5 +1,9 @@
 var RecipeService = require('../services/recipe.service');
 
+/**
+ * grab all recipes
+ * endpoint: /
+ */
 exports.getAllRecipes = async(req, res, next) => {
     //if there is a page, else page 1
 
@@ -22,6 +26,11 @@ exports.getAllRecipes = async(req, res, next) => {
     }
 }
 
+/**
+ * grab a single recipe
+ * @param {string} url - url keys for the recipe
+ * endpoint: /recipes/:url
+ */
 exports.getSingleRecipeFromUrl = async(req, res) => {
 
     if(!req.params.url) {
@@ -43,9 +52,13 @@ exports.getSingleRecipeFromUrl = async(req, res) => {
             message: e.message
         })
     }
-
 }
 
+/**
+ * create a single recipe
+ * @param {object} recipe - recipe object currently no form to submit
+ * endpoint: /
+ */
 exports.createRecipe = async(req, res, next) => {
     const recipe = {
         name: req.body.name,
