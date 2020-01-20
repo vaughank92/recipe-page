@@ -58,6 +58,10 @@ exports.createRecipe = async(recipe) => {
     }
 }
 
+/**
+ * @param {string} id - id of the recipe to be removed
+ * @return {boolean} deleted - did it delete or no
+ */
 exports.deleteRecipe = async(id) => {
     try {
         let deleted = await Recipe.remove({_id: id});
