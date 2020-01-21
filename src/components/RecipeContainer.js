@@ -6,12 +6,12 @@ import sampleRecipes from '../sample-recipe';
 const RecipeContainer = (props) =>{
     const recipeId = props.match.params.recipeId;
 
-    const [recipe, setSingleRecipe] = useState({});
+    const [recipe, setRecipe] = useState({});
 
     useEffect(() => {
       fetch(`http://localhost:7777/api/recipes/${recipeId}`)
           .then(res => res.json())
-          .then(data => setSingleRecipe(data.data))
+          .then(data => setRecipe(data.data))
           .catch(e => console.error(e))
     }, []);
 
