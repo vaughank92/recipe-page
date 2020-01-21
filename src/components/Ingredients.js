@@ -3,7 +3,7 @@ import Ingredient from './Ingredient';
 
 const Ingredients = ({ingredientsList}) => {
 
-  const extractIngredient = (ingredientsList) => {
+  const displayIngredients = () => {
     return ingredientsList ?
       Object.keys(ingredientsList).map((key) => {
         const ingObj = ingredientsList[key];
@@ -18,7 +18,7 @@ const Ingredients = ({ingredientsList}) => {
   return (
     <div className="ingredients">
       <h4>Ingredients</h4>
-      {extractIngredient(ingredientsList)}
+      {displayIngredients()}
     </div>
   )
 }
