@@ -59,12 +59,12 @@ exports.createRecipe = async(recipe) => {
 }
 
 /**
- * @param {string} id - id of the recipe to be removed
+ * @param {string} url - url of the recipe to be removed
  * @return {boolean} deleted - did it delete or no
  */
-exports.deleteRecipe = async(id) => {
+exports.deleteRecipe = async(url) => {
     try {
-        let deleted = await Recipe.remove({_id: id});
+        let deleted = await Recipe.remove({_url: url});
         if(deleted.result.n === 0) {
             throw Error("Recipe could not be deleted");
         }
