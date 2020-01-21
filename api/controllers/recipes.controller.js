@@ -1,7 +1,9 @@
 var RecipeService = require('../services/recipe.service');
 
-_this = this;
-
+/**
+ * grab all recipes
+ * endpoint: /
+ */
 exports.getAllRecipes = async(req, res, next) => {
     //if there is a page, else page 1
 
@@ -14,18 +16,49 @@ exports.getAllRecipes = async(req, res, next) => {
         let recipes = await RecipeService.getAllRecipes({}, page, limit);
         
         return res.status(200).json({
-            status: 200,
             data: recipes,
             message: "All Recipes Received"
         });
     } catch(e) {
         return res.status(400).json({
-            status: 400,
             message: e.message
         });
     }
 }
 
+/**
+ * grab a single recipe
+ * @param {string} url - url keys for the recipe
+ * endpoint: /recipes/:url
+ */
+exports.getSingleRecipeFromUrl = async(req, res) => {
+
+    if(!req.params.url) {
+        return res.status(400).json({
+          message: "Missing recipe URL"
+        })
+    }
+
+    const recipeUrl = req.params.url;
+
+    try {
+        const recipe = await RecipeService.getSingleRecipeFromUrl(recipeUrl);
+        return res.status(200).json({
+            data: recipe,
+            message: "Recipe Found"
+        });
+    } catch(e) {
+        return res.status(400).json({
+            message: e.message
+        })
+    }
+}
+
+/**
+ * create a single recipe
+ * @param {object} recipe - recipe object currently no form to submit
+ * endpoint: /
+ */
 exports.createRecipe = async(req, res, next) => {
     const recipe = {
         name: req.body.name,
@@ -41,14 +74,13 @@ exports.createRecipe = async(req, res, next) => {
     try{
         let createdRecipe = await RecipeService.createRecipe(recipe);
         return res.status(201).json({
-            status: 201,
             data: createdRecipe,
             message: "Successfully Created Recipe"
         });
     }
     catch(e) {
         return res.status(400).json({
-            status: 400,
+
             message: "Recipe Creation Unsuccessful " + e
         });
     }
