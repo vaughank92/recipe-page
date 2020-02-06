@@ -10,10 +10,36 @@ h2, h4 {
   margin-bottom: 10px;
 }
 
-h2, h4 {
+.recipeCard {
+  justify-content: space-between;
+  margin: 10px;
+  flex-basis: 25%;
+  min-width: 250px;
+  height: 150px;
+  flex-grow: 1;
+  background-color: #EAE0D5;
+  text-align: center;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #C2C2C2;
+  display: flex;
+  flex-direction: column;
+}
+.recipeCard:hover {
+  box-shadow: 3px 3px 3px 0px #C2C2C2;
+}
+.recipeCard .recipeTitle {
+  font-size: 18px;
   font-family: "Merriweather";
-  margin: 0;
-  margin-bottom: 10px;
+  color: #0A0908;
+}
+.recipeCard .recipeDesc {
+  overflow-y: scroll;
+  font-size: 14px;
+}
+.recipeCard .recipeDesc::-webkit-scrollbar {
+  display: none;
+}
+.recipeCard .recipeKeys {
+  color: #0A0908;
 }
 
 html {
@@ -74,17 +100,6 @@ body, #main, #main > div, .pageContent {
   display: flex;
   flex-wrap: wrap;
   margin: -10px;
-}
-
-.recipeCard {
-  justify-content: space-evenly;
-  margin: 10px;
-  flex-basis: 25%;
-  min-width: 250px;
-  height: 150px;
-  flex-grow: 1;
-  font-family: "Montserrat";
-  background-color: #EAE0D5;
 }
 
 .directions {
