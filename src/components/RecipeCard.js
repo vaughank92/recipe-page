@@ -3,7 +3,7 @@ import React from 'react';
 const RecipeCard = (props) => {
     const name = props.name;
     const goToRecipe = props.recipeClick;
-    console.log(props);
+    const keywords = props.details.keywords;
     return (
         <div id={props.details.url} className="recipeCard" onClick={goToRecipe}>
             <span className="recipeTitle">{name}</span>
@@ -11,7 +11,9 @@ const RecipeCard = (props) => {
                 {props.details.desc}
             </div>
             <div className="recipeKeys">
-                {props.details.keywords}
+                { keywords.map((word, index) => {
+                    return <span key={index}>{word} </span>
+                })}
             </div>
         </div>
 
