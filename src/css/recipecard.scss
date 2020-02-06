@@ -1,0 +1,40 @@
+@import './variables.scss';
+@import './fonts.scss';
+
+.recipeCard {
+    justify-content: space-between;
+    margin: 10px;
+    flex-basis: 25%;
+    min-width: 250px;
+    height: 150px;
+    flex-grow: 1;
+    background-color: $pearl;
+    text-align: center;
+    box-shadow: .5px .5px .5px .5px $glass;
+
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        box-shadow: 3px 3px 3px 0px $glass;
+    }
+
+    .recipeTitle {
+        font-size: 18px;
+        font-family: $title-fonts;
+        color: $smoky-black;
+    }
+
+    .recipeDesc {
+        overflow-y: scroll;
+        font-size: 14px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .recipeKeys {
+        color: $smoky-black;
+    }
+}
