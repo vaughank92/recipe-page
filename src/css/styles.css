@@ -40,6 +40,13 @@ h2, h4 {
 }
 .recipeCard .recipeKeys {
   color: #0A0908;
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 0 5px;
+  height: 20px;
+}
+.recipeCard .recipeKeys::-webkit-scrollbar {
+  display: none;
 }
 
 html {
