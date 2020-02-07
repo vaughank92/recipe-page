@@ -28,6 +28,7 @@
     .recipeDesc {
         overflow-y: scroll;
         font-size: 14px;
+        font-family: $not-title-fonts;
 
         &::-webkit-scrollbar {
             display: none;
@@ -40,6 +41,7 @@
         white-space: nowrap;
         padding: 0 5px;
         height: 20px;
+        font-family: $not-title-fonts;
 
         &::-webkit-scrollbar {
             display: none;

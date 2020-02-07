@@ -34,6 +34,7 @@ h2, h4 {
 .recipeCard .recipeDesc {
   overflow-y: scroll;
   font-size: 14px;
+  font-family: "Montserrat";
 }
 .recipeCard .recipeDesc::-webkit-scrollbar {
   display: none;
@@ -44,9 +45,27 @@ h2, h4 {
   white-space: nowrap;
   padding: 0 5px;
   height: 20px;
+  font-family: "Montserrat";
 }
 .recipeCard .recipeKeys::-webkit-scrollbar {
   display: none;
+}
+
+.recipeContainer {
+  background-color: #EAE0D5;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #C2C2C2;
+  padding: 10px;
+}
+.recipeContainer .descriptionBox {
+  font-family: "Montserrat";
+  margin: 20px;
+}
+.recipeContainer .descriptionBox .description {
+  font-size: 12px;
+}
+.recipeContainer .directions {
+  margin: 20px;
+  font-family: "Montserrat";
 }
 
 html {
@@ -98,19 +117,10 @@ body, #main, #main > div, .pageContent {
   float: right;
 }
 
-.recipeContainer {
-  background-color: #EAE0D5;
-  padding: 10px;
-}
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   margin: -10px;
-}
-
-.directions {
-  font-family: "Montserrat";
 }
 
 /*# sourceMappingURL=styles.css.map */

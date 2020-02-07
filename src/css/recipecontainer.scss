@@ -1,0 +1,19 @@
+.recipeContainer {
+    background-color: $pearl;
+    box-shadow: .5px .5px .5px .5px $glass;
+    padding: 10px;
+
+    .descriptionBox {
+        font-family: $not-title-fonts;
+        margin: 20px;
+
+        .description {
+            font-size: 12px;
+        }
+    }
+
+    .directions {
+        margin: 20px;
+        font-family: $not-title-fonts;
+    }
+}

@@ -20,6 +20,10 @@ const RecipeContainer = (props) =>{
       <Ingredients ingredientsList={recipe.ingredients}/>
       <div className="recipeContainer">
         <h2>{recipe.name}</h2>
+        <div className="descriptionBox">
+          <h4>Description</h4>
+          <div className="description">{recipe.desc}</div>
+        </div>
         <Directions directionsList={recipe.directions}/>
       </div>
     </div>
