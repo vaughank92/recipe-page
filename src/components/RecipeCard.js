@@ -1,11 +1,10 @@
 import React from 'react';
 
-const RecipeCard = (props) => {
-    
-    const {name, recipeClick, details } = props;
+const RecipeCard = ({name, recipeClick, details}) => {
+
     const keywords = details.keywords;
 
-    let keyDom = keywords.map((word, index) => {
+    let keywordList = keywords.map((word, index) => {
         return <span key={index}>{word} </span> })
     return (
         <div id={details.url} className="recipeCard" onClick={recipeClick}>
@@ -14,7 +13,7 @@ const RecipeCard = (props) => {
                 {details.desc}
             </div>
             <div className="recipeKeys">
-                { keyDom }
+                { keywordList }
             </div>
         </div>
 
