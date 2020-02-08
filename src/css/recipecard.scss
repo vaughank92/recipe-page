@@ -2,6 +2,8 @@
 @import './fonts.scss';
 
 .recipeCard {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin: 10px;
     flex-basis: 25%;
@@ -11,9 +13,6 @@
     background-color: $pearl;
     text-align: center;
     box-shadow: .5px .5px .5px .5px $glass;
-
-    display: flex;
-    flex-direction: column;
 
     &:hover {
         box-shadow: 3px 3px 3px 0px $glass;

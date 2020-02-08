@@ -11,6 +11,8 @@ h2, h4 {
 }
 
 .recipeCard {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 10px;
   flex-basis: 25%;
@@ -20,8 +22,6 @@ h2, h4 {
   background-color: #EAE0D5;
   text-align: center;
   box-shadow: 0.5px 0.5px 0.5px 0.5px #C2C2C2;
-  display: flex;
-  flex-direction: column;
 }
 .recipeCard:hover {
   box-shadow: 3px 3px 3px 0px #C2C2C2;
