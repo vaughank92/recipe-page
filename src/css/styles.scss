@@ -1,6 +1,9 @@
 @import './variables.scss';
 @import './fonts.scss';
 
+@import './recipecard.scss';
+@import './recipecontainer.scss';
+
 html {
     background-color: $anti-flash-white;
     color: $smoky-black;
@@ -47,36 +50,15 @@ body, #main, #main > div, .pageContent {
     border-radius: 10px;
 }
 
-
 .homeContainer, .recipeContainer {
     margin-left: 15px;
     flex-basis: 80%;
     float: right;
 }
 
-.recipeContainer {
-    background-color: $pearl;
-    padding: 10px;
-}
-
 .cards {
     display: flex;
     flex-wrap: wrap;
     margin: -10px;
-}
-
-.recipeCard {
-    justify-content: space-evenly;
-    margin: 10px;
-    flex-basis: 25%;
-    min-width: 250px;
-    height: 150px;
-    flex-grow: 1;
-    font-family: $not-title-fonts;
-    background-color: $pearl;
-}
-
-.directions {
-    font-family: $not-title-fonts;
 }
 

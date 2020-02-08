@@ -1,12 +1,20 @@
 import React from 'react';
 
+const RecipeCard = ({name, recipeClick, details}) => {
 
-const RecipeCard = (props) => {
-    const name = props.name;
-    const goToRecipe = props.recipeClick;
+    const keywords = details.keywords;
+
+    let keywordList = keywords.map((word, index) => {
+        return <span key={index}>{word} </span> })
     return (
-        <div id={props.details.url} className="recipeCard" onClick={goToRecipe}>
-            <span>{name}</span>
+        <div id={details.url} className="recipeCard" onClick={recipeClick}>
+            <span className="recipeTitle">{name}</span>
+            <div className="recipeDesc">
+                {details.desc}
+            </div>
+            <div className="recipeKeys">
+                { keywordList }
+            </div>
         </div>
 
     )
