@@ -3,7 +3,7 @@ import React from 'react';
 const RecipeForm = () => {
     return (
         <form className="recipeForm">
-            <h4>New Recipe Form</h4>
+            <h2>New Recipe Form</h2>
             <div className="name">
                 <label for="recipeName">
                     Title
@@ -20,7 +20,8 @@ const RecipeForm = () => {
                 <label for="recipeDesc">
                     Description
                 </label>
-                <textarea id="recipeDesc" className="recipeDesc"></textarea>
+                <textarea id="recipeDesc" className="recipeDesc"
+                placeholder="General description, serving count, and other relevant information"></textarea>
             </div>
             <div className="keywords">
                 <label for="recipeKeywords">
@@ -29,13 +30,20 @@ const RecipeForm = () => {
                 <input id="recipeKeywords" className="recipeKeywords"></input>
             </div>
             <div className="ingredientsList">
-            ingredients
+                <label for="recipeIngredients">
+                    Ingredients
+                </label>
+                <textarea id="recipeIngredients" className="recipeIngredients"
+                    placeholder="Place each ingredient on a new line">
+                </textarea>
             </div>
             <div className="directions">
                 <label for="recipeDirections">
                     Directions
                 </label>
-                <textarea id="recipeDirections" className="recipeDirections"></textarea>
+                <textarea id="recipeDirections" className="recipeDirections"
+                    placeholder="Place each step on a new line">
+                </textarea>
             </div>
             <button>Submit</button>
         </form>
