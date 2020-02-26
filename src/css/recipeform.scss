@@ -25,7 +25,8 @@
         border: none;
         font-family: $not-title-fonts;
         font-size: 14px;
-        border-radius: 10px;
+        border-radius: 5px;
+        padding: 10px;
 
         &:focus {
             outline: none;

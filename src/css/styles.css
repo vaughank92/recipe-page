@@ -95,7 +95,8 @@ h2, h4 {
   border: none;
   font-family: "Montserrat";
   font-size: 14px;
-  border-radius: 10px;
+  border-radius: 5px;
+  padding: 10px;
 }
 .recipeForm input:focus, .recipeForm textarea:focus {
   outline: none;
@@ -111,12 +112,14 @@ html {
   height: 100%;
 }
 
-body, #main, #main > div, .pageContent {
+body, #main, #main > div {
   height: 100%;
 }
 
 .pageContent {
   display: flex;
+  min-height: 100%;
+  height: auto;
 }
 
 .header {
@@ -133,7 +136,8 @@ body, #main, #main > div, .pageContent {
   flex-basis: 20%;
   background-color: #8D99AE;
   padding: 10px;
-  height: 100%;
+  min-height: 100%;
+  height: auto;
   font-family: "Montserrat";
 }
 .sideBar span, .ingredients span {
@@ -161,7 +165,8 @@ body, #main, #main > div, .pageContent {
   margin-left: 15px;
   flex-basis: 80%;
   float: right;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
 }
 
 .cards {
