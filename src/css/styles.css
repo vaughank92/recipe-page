@@ -188,5 +188,8 @@ body, #main, #main > div {
 .submit:hover {
   box-shadow: 0.75px 0.75px 0.75px 0.75px #C2C2C2;
 }
+.submit:focus {
+  outline: none;
+}
 
 /*# sourceMappingURL=styles.css.map */
