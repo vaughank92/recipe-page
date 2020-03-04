@@ -97,6 +97,7 @@ h2, h4 {
   font-size: 14px;
   border-radius: 5px;
   padding: 10px;
+  background-color: #EDF2F4;
 }
 .recipeForm input:focus, .recipeForm textarea:focus {
   outline: none;
@@ -173,6 +174,19 @@ body, #main, #main > div {
   display: flex;
   flex-wrap: wrap;
   margin: -10px;
+}
+
+.submit {
+  font-family: "Montserrat";
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #CDDBE1;
+  color: #2B2D42;
+  float: right;
+}
+.submit:hover {
+  box-shadow: 0.75px 0.75px 0.75px 0.75px #C2C2C2;
 }
 
 /*# sourceMappingURL=styles.css.map */

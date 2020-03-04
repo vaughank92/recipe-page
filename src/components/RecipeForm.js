@@ -45,7 +45,7 @@ const RecipeForm = () => {
                     placeholder="Place each step on a new line">
                 </textarea>
             </div>
-            <button>Submit</button>
+            <button type="submit" className="submit submitRecipe">Submit</button>
         </form>
     )
 }
