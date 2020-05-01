@@ -1,4 +1,5 @@
 var RecipeService = require('../services/recipe.service');
+var RecipeFormService = require('../services/recipeform.service');
 
 /**
  * grab all recipes
@@ -60,20 +61,28 @@ exports.getSingleRecipeFromUrl = async(req, res) => {
  * endpoint: /
  */
 exports.createRecipe = async(req, res, next) => {
+
+    console.log('body', req.body);
+
+    let url = await RecipeFormService.buildUrl(req.body.title);
+    let ingredients = await RecipeFormService.formatIngredients(req.body.ingredients);
+
     const recipe = {
-        name: req.body.name,
-        url: req.body.url,
+        name: req.body.title,
+        url: url,
         image: req.body.image,
         desc: req.body.desc,
         source: req.body.source,
         keywords: req.body.keywords,
-        ingredients: req.body.ingredients,
+        ingredients: ingredients,
         directions: req.body.directions
     }
 
     try{
         let createdRecipe = await RecipeService.createRecipe(recipe);
+
         return res.status(201).json({
+            check: recipe,
             data: createdRecipe,
             message: "Successfully Created Recipe"
         });
