@@ -38,6 +38,8 @@ exports.getSingleRecipeFromUrl = async(recipeUrl) => {
  * @return {object} savedRecipe - newly added recipe
  */
 exports.createRecipe = async(recipe) => {
+    console.log('hit', recipe);
+    // return recipe;
 
     let newRecipe = new Recipe({
         name: recipe.name,
@@ -52,6 +54,8 @@ exports.createRecipe = async(recipe) => {
 
     try{
         let savedRecipe = await newRecipe.save();
+        console.log('success');
+        console.log(savedRecipe);
         return savedRecipe;
     } catch(e) {
         throw Error("Error Creating Recipe " + e);

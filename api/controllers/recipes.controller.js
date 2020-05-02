@@ -62,10 +62,10 @@ exports.getSingleRecipeFromUrl = async(req, res) => {
  */
 exports.createRecipe = async(req, res, next) => {
 
-    console.log('body', req.body);
-
     let url = await RecipeFormService.buildUrl(req.body.title);
     let ingredients = await RecipeFormService.formatIngredients(req.body.ingredients);
+    let directions = await RecipeFormService.formatDirections(req.body.directions);
+    let keywords = await RecipeFormService.formatKeywords(req.body.keywords);
 
     const recipe = {
         name: req.body.title,
@@ -73,9 +73,9 @@ exports.createRecipe = async(req, res, next) => {
         image: req.body.image,
         desc: req.body.desc,
         source: req.body.source,
-        keywords: req.body.keywords,
+        keywords: keywords,
         ingredients: ingredients,
-        directions: req.body.directions
+        directions: directions
     }
 
     try{

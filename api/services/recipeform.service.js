@@ -4,14 +4,26 @@ const toMap = measures.measuresToMap;
 const toFind = measures.measuresToFind;
 
 exports.buildUrl = (name) => {
-    return name.replace(' ', '-');
+    return name.toLowerCase().replace(/\s/g, '-');
+}
+
+//replace/update when tags library is found
+exports.formatKeywords = (keywords) => {
+    let formattedKeywords = keywords.replace(',', '').split(' ');
+    return formattedKeywords;
+}
+
+exports.formatDirections = (directions) => {
+    let formattedDirections = directions.split('\n');
+    return formattedDirections;
 }
 
 exports.formatIngredients = (ingredients) => {
-    console.log(toMap['oz']['single']);
     const ingredientArray = ingredients.split("\n");
     let ingredientObj = [];
     let measuresToFind = Object.keys(toFind);
+
+    console.log(ingredients);
     
     //should match: 1 , 1oz , .15 , 1.5 , 1/5 , 1/5oz , 1 1/5 , 1-1/5   
     let amountRegex = /([0-9]*[\.]?)?[0-9]+(([\s-]+[0-9]*)?\/+[0-9]*)*/g;
@@ -19,48 +31,54 @@ exports.formatIngredients = (ingredients) => {
     ingredientArray.forEach(ingredient => {
 
         //Will likely need to be reworked later for allowing math calculations on ingredients
-        let amount = ingredient.match(amountRegex)[0];
-        let brokenArray = amount.split(/[ -]+/);
-        let amountArray = brokenArray.join(' ');
+        let match = ingredient.match(amountRegex);
+        // let amount = ingredient.match(amountRegex)[0];
         let mappedMeasure = '';
         let finalAmount = '';
         let single = false;
 
-        /**
-         * find the amount of the ingredient needed
-         * Convert to fractions if needed
-         * check if singlurlar or plural measure should be used
-         * Then pull it off the ingredient string
-         */
-        if(amountArray.indexOf('.') != -1) {
-            let decimalArray = amount.split('.');
-            decimalArray = decimalArray.filter(num => num != '');
-            let index = decimalArray.length -1;
-            let decimal = parseInt(decimalArray[index]);
-            if(decimal % 50 == 0) {
-                decimalArray[index] = '1/2';
-            } else {
-                let top = decimal / 25;
-                decimalArray[index] = top+'/4';
-            }
-            finalAmount = decimalArray.join(' ');
-
-            let singleCheck = parseFloat(amountArray);
-            if(singleCheck <= 1){
-                single = true;
-            }
-        }
-        else {
-            finalAmount = amountArray;
-            if(brokenArray.length == 1) {
-                let singleCheck = parseInt(brokenArray);
-                if(singleCheck <= 1) {
+        if(match !== null) {
+            let amount = match[0];
+            let brokenArray = amount.split(/[ -]+/);
+            let amountArray = brokenArray.join(' ');
+        
+    
+            /**
+             * find the amount of the ingredient needed
+             * Convert to fractions if needed
+             * check if singlurlar or plural measure should be used
+             * Then pull it off the ingredient string
+             */
+            if(amountArray.indexOf('.') != -1) {
+                let decimalArray = amount.split('.');
+                decimalArray = decimalArray.filter(num => num != '');
+                let index = decimalArray.length -1;
+                let decimal = parseInt(decimalArray[index]);
+                if(decimal % 50 == 0) {
+                    decimalArray[index] = '1/2';
+                } else {
+                    let top = decimal / 25;
+                    decimalArray[index] = top+'/4';
+                }
+                finalAmount = decimalArray.join(' ');
+    
+                let singleCheck = parseFloat(amountArray);
+                if(singleCheck <= 1){
                     single = true;
                 }
             }
-        }
-
-        ingredient = ingredient.replace(amount, '').trim();
+            else {
+                finalAmount = amountArray;
+                if(brokenArray.length == 1) {
+                    let singleCheck = parseInt(brokenArray);
+                    if(singleCheck <= 1) {
+                        single = true;
+                    }
+                }
+            }
+    
+            ingredient = ingredient.replace(amount, '').trim();
+        }    
 
         /**
          * find the measure to be used
@@ -99,7 +117,7 @@ exports.formatIngredients = (ingredients) => {
             measure: mappedMeasure
             }
         );
-        console.log(ingredientObj);
+        // console.log(ingredientObj);
     })
 
     return ingredientObj;
