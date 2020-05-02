@@ -23,7 +23,6 @@ exports.formatIngredients = (ingredients) => {
     let ingredientObj = [];
     let measuresToFind = Object.keys(toFind);
 
-    console.log(ingredients);
     
     //should match: 1 , 1oz , .15 , 1.5 , 1/5 , 1/5oz , 1 1/5 , 1-1/5   
     let amountRegex = /([0-9]*[\.]?)?[0-9]+(([\s-]+[0-9]*)?\/+[0-9]*)*/g;
@@ -32,7 +31,6 @@ exports.formatIngredients = (ingredients) => {
 
         //Will likely need to be reworked later for allowing math calculations on ingredients
         let match = ingredient.match(amountRegex);
-        // let amount = ingredient.match(amountRegex)[0];
         let mappedMeasure = '';
         let finalAmount = '';
         let single = false;
@@ -117,7 +115,6 @@ exports.formatIngredients = (ingredients) => {
             measure: mappedMeasure
             }
         );
-        // console.log(ingredientObj);
     })
 
     return ingredientObj;

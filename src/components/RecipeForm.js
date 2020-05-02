@@ -21,18 +21,15 @@ const RecipeForm = () => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    // console.log('state', state)
+
     const { title, source, desc, keywords, ingredients, directions } = state;
     
     const onChange = (event) => {
-        // console.log(event.target.name);
-        // console.log(event.target.value);
         dispatch({field: event.target.name, value: event.target.value});
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(state);
         fetch('http://localhost:7777/api/recipes/create', {
             method: 'POST',
             headers : {
