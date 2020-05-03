@@ -1,5 +1,4 @@
-import React from 'react';
-import { useReducer } from 'react';
+import React, { useReducer } from 'react';
 
 const RecipeForm = () => {
 

@@ -1,27 +1,24 @@
-const measures = require('../measurements');
-
-const toMap = measures.measuresToMap;
-const toFind = measures.measuresToFind;
+const {measuresToMap, measuresToFind} = require("../measurements");
 
 exports.buildUrl = (name) => {
-    return name.toLowerCase().replace(/\s/g, '-');
+    return name.toLowerCase().replace(/\s/g, "-");
 }
 
 //replace/update when tags library is found
 exports.formatKeywords = (keywords) => {
-    let formattedKeywords = keywords.replace(',', '').split(' ');
+    let formattedKeywords = keywords.replace(",", "").split(" ");
     return formattedKeywords;
 }
 
 exports.formatDirections = (directions) => {
-    let formattedDirections = directions.split('\n');
+    let formattedDirections = directions.split("\n");
     return formattedDirections;
 }
 
 exports.formatIngredients = (ingredients) => {
     const ingredientArray = ingredients.split("\n");
     let ingredientObj = [];
-    let measuresToFind = Object.keys(toFind);
+    let toFind = Object.keys(measuresToFind);
 
     
     //should match: 1 , 1oz , .15 , 1.5 , 1/5 , 1/5oz , 1 1/5 , 1-1/5   
@@ -38,7 +35,7 @@ exports.formatIngredients = (ingredients) => {
         if(match !== null) {
             let amount = match[0];
             let brokenArray = amount.split(/[ -]+/);
-            let amountArray = brokenArray.join(' ');
+            let amountArray = brokenArray.join(" ");
         
     
             /**
@@ -47,18 +44,18 @@ exports.formatIngredients = (ingredients) => {
              * check if singlurlar or plural measure should be used
              * Then pull it off the ingredient string
              */
-            if(amountArray.indexOf('.') != -1) {
-                let decimalArray = amount.split('.');
-                decimalArray = decimalArray.filter(num => num != '');
+            if(amountArray.indexOf(".") != -1) {
+                let decimalArray = amount.split(".");
+                decimalArray = decimalArray.filter(num => num != "");
                 let index = decimalArray.length -1;
                 let decimal = parseInt(decimalArray[index]);
                 if(decimal % 50 == 0) {
-                    decimalArray[index] = '1/2';
+                    decimalArray[index] = "1/2";
                 } else {
                     let top = decimal / 25;
-                    decimalArray[index] = top+'/4';
+                    decimalArray[index] = top+"/4";
                 }
-                finalAmount = decimalArray.join(' ');
+                finalAmount = decimalArray.join(" ");
     
                 let singleCheck = parseFloat(amountArray);
                 if(singleCheck <= 1){
@@ -75,7 +72,7 @@ exports.formatIngredients = (ingredients) => {
                 }
             }
     
-            ingredient = ingredient.replace(amount, '').trim();
+            ingredient = ingredient.replace(amount, "").trim();
         }    
 
         /**
@@ -88,25 +85,18 @@ exports.formatIngredients = (ingredients) => {
          * 
          * remove the measure from the ingredient string
          */
-        measuresToFind.forEach(measure => {
+        toFind.forEach(measure => {
             let indexCheck = ingredient.toLowerCase().indexOf(measure);
             if(indexCheck > -1 && indexCheck < 2) {
-                let mapKey = toFind[measure];
+                let mapKey = measuresToFind[measure];
                 if(single) {
-                    mappedMeasure = toMap[mapKey].single;
+                    mappedMeasure = measuresToMap[mapKey].single;
                 }
                 else {
-                    mappedMeasure = toMap[mapKey].plural;
+                    mappedMeasure = measuresToMap[mapKey].plural;
                 }
-                let find = new RegExp('\\w*' + measure + '\\w*', 'i');
+                let find = new RegExp("\\w*" + measure + "\\w*", "i");
                 ingredient = ingredient.toLowerCase().replace(find, '').trim();
-
-                // if(ingredient.indexOf(measure) == 1) {
-                //     ingredient = ingredient.replace(measure, '');
-                // }
-                // else {
-                //     ingredient = ingredient.replace(measure, mappedMeasure);
-                // }
             }
         });
         ingredientObj.push({

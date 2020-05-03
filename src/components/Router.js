@@ -26,8 +26,8 @@ const Router = () => {
           <App />
           <Switch>
             <Route exact path="/" render={(props) => <HomeContainer recipes={recipes} />}/>
+            <Route exact path="/recipe/create" component={RecipeFormContainer}/>
             <Route exact path="/recipe/:recipeId" component={RecipeContainer}/>
-            <Route exact path="/form/create-recipe" component={RecipeFormContainer}/>
             <Route component={NotFound} />
           </Switch>
         </div>
