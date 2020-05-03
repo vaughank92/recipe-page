@@ -58,6 +58,6 @@ const measuresToMap = {
 
 
 module.exports = {
-    measuresToFind: measuresToFind,
-    measuresToMap: measuresToMap
+    measuresToFind,
+    measuresToMap
 }
