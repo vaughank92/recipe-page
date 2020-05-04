@@ -3,6 +3,7 @@
 
 @import './recipecard.scss';
 @import './recipecontainer.scss';
+@import './recipeform.scss';
 
 html {
     background-color: $anti-flash-white;
@@ -10,12 +11,14 @@ html {
     height: 100%;
 }
 
-body, #main, #main > div, .pageContent {
+body, #main, #main > div {
     height: 100%;
 }
 
 .pageContent {
     display: flex;
+    min-height: 100%;
+    height: auto;
 }
 
 .header {
@@ -32,7 +35,8 @@ body, #main, #main > div, .pageContent {
     flex-basis: 20%;
     background-color: $gray-blue;
     padding: 10px;
-    height: 100%;
+    min-height: 100%;
+    height: auto;
     font-family: $not-title-fonts;
     
     span {
@@ -46,19 +50,48 @@ body, #main, #main > div, .pageContent {
     }
 }
 
-.sideBar, .recipeCard, .ingredients, .recipeContainer {
+.recipeContainer, .recipeForm {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.recipeCard {
     border-radius: 10px;
 }
 
-.homeContainer, .recipeContainer {
+.sideBar, .ingredients {
+    border-radius: 0px 10px 0px 0px;
+    margin-left: -10px;
+}
+
+.homeContainer, .recipeContainer, .recipeForm {
     margin-left: 15px;
     flex-basis: 80%;
     float: right;
+    height: auto;
+    min-height: 100%;
 }
 
 .cards {
     display: flex;
     flex-wrap: wrap;
     margin: -10px;
+}
+
+.submit {
+    font-family: $not-title-fonts;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: $columbia-blue;
+    color: $gunmetal;
+    float: right;
+
+    &:hover {
+        box-shadow: .75px .75px .75px .75px $glass;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }
 

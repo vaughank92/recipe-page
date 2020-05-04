@@ -1,0 +1,41 @@
+@import './variables.scss';
+@import './fonts.scss';
+
+.recipeForm {
+    background-color: $pearl;
+    box-shadow: .5px .5px .5px .5px $glass;
+    padding: 10px;
+
+    font-family: $not-title-fonts;
+
+    div {
+        display: flex;
+        white-space: nowrap;
+    }
+
+    label {
+        margin: 10px;
+        font-weight: bold;
+    }
+
+    input, textarea {
+        margin: 10px;
+        width: 100%;
+        box-shadow: .5px .5px .5px .5px $glass;
+        border: none;
+        font-family: $not-title-fonts;
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: $anti-flash-white;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    textarea {
+        vertical-align: middle;
+        min-height: 80px;
+    }
+}

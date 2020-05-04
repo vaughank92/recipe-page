@@ -4,6 +4,7 @@ import NotFound from './NotFound';
 import App from './App';
 import HomeContainer from './HomeContainer';
 import RecipeContainer from './RecipeContainer';
+import RecipeFormContainer from './RecipeFormContainer';
 import Sidebar from './Sidebar';
 import sampleRecipes from '../sample-recipe';
 
@@ -25,6 +26,7 @@ const Router = () => {
           <App />
           <Switch>
             <Route exact path="/" render={(props) => <HomeContainer recipes={recipes} />}/>
+            <Route exact path="/recipe/create" component={RecipeFormContainer}/>
             <Route exact path="/recipe/:recipeId" component={RecipeContainer}/>
             <Route component={NotFound} />
           </Switch>

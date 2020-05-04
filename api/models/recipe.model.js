@@ -12,8 +12,8 @@ let RecipeSchema = new mongoose.Schema({
     ingredients: [
         {
             ingredient: { type: String, required: true },
-            amount: { type: String, required: true },
-            measure: { type: String, required: true }
+            amount: { type: String },
+            measure: { type: String }
         }
     ],
     directions: { type: Array, required: true }

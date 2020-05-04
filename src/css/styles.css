@@ -68,18 +68,59 @@ h2, h4 {
   font-family: "Montserrat";
 }
 
+h2, h4 {
+  font-family: "Merriweather";
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.recipeForm {
+  background-color: #EAE0D5;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #C2C2C2;
+  padding: 10px;
+  font-family: "Montserrat";
+}
+.recipeForm div {
+  display: flex;
+  white-space: nowrap;
+}
+.recipeForm label {
+  margin: 10px;
+  font-weight: bold;
+}
+.recipeForm input, .recipeForm textarea {
+  margin: 10px;
+  width: 100%;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #C2C2C2;
+  border: none;
+  font-family: "Montserrat";
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #EDF2F4;
+}
+.recipeForm input:focus, .recipeForm textarea:focus {
+  outline: none;
+}
+.recipeForm textarea {
+  vertical-align: middle;
+  min-height: 80px;
+}
+
 html {
   background-color: #EDF2F4;
   color: #0A0908;
   height: 100%;
 }
 
-body, #main, #main > div, .pageContent {
+body, #main, #main > div {
   height: 100%;
 }
 
 .pageContent {
   display: flex;
+  min-height: 100%;
+  height: auto;
 }
 
 .header {
@@ -96,7 +137,8 @@ body, #main, #main > div, .pageContent {
   flex-basis: 20%;
   background-color: #8D99AE;
   padding: 10px;
-  height: 100%;
+  min-height: 100%;
+  height: auto;
   font-family: "Montserrat";
 }
 .sideBar span, .ingredients span {
@@ -107,20 +149,47 @@ body, #main, #main > div, .pageContent {
   padding: 0;
 }
 
-.sideBar, .recipeCard, .ingredients, .recipeContainer {
+.recipeContainer, .recipeForm {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.recipeCard {
   border-radius: 10px;
 }
 
-.homeContainer, .recipeContainer {
+.sideBar, .ingredients {
+  border-radius: 0px 10px 0px 0px;
+  margin-left: -10px;
+}
+
+.homeContainer, .recipeContainer, .recipeForm {
   margin-left: 15px;
   flex-basis: 80%;
   float: right;
+  height: auto;
+  min-height: 100%;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   margin: -10px;
+}
+
+.submit {
+  font-family: "Montserrat";
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #CDDBE1;
+  color: #2B2D42;
+  float: right;
+}
+.submit:hover {
+  box-shadow: 0.75px 0.75px 0.75px 0.75px #C2C2C2;
+}
+.submit:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
